@@ -46,7 +46,7 @@ class circle  {
         }));
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
-        SinglePlayeranimation=new Timeline(new KeyFrame(Duration.millis(8),e->
+        SinglePlayeranimation=new Timeline(new KeyFrame(Duration.millis(4),e->
         {
             if(destination!=0)
             {
@@ -78,6 +78,12 @@ class circle  {
 
 
     }
+    private void Ai( )
+    {
+        destination= (dy==1)?x-100+y:-1*(x-100)+y;
+        destination=destination>500-40?500-40:destination;
+        destination=destination<0?0:destination;
+    }
 
 
     public void moveball (Rectangle r1, Rectangle r2,Circle c1){
@@ -86,7 +92,8 @@ class circle  {
             score2++;
             x=250;
             y=250;
-            destination=dy==1? x-100+y: -1*(x-100)+y;
+           Ai();
+
 
             SinglePlayeranimation.play();
 
@@ -96,7 +103,9 @@ class circle  {
             score1++;
             x=250;
             y=250;
-            destination=dy==1? x-100+y: -1*(x-100)+y;
+            Ai();
+
+
             SinglePlayeranimation.play();
 
 
@@ -104,11 +113,12 @@ class circle  {
 
         if (y < radius || y > Height - radius) {
             dy *= -1;
-            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
-            destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
-/*
-            destination= (dy==1)?x-100+y:1*(x-100);
-*/
+//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
+//           destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
+
+            Ai();
+
+
 
             SinglePlayeranimation.play();
             System.out.println(destination);
@@ -120,12 +130,13 @@ class circle  {
         if(c1.intersects(r1.getBoundsInParent()))
         {
             dx *= -1;
-            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
-            destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
+//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
+//            destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
 
-/*
-            destination= (dy==1)?x-100+y:1*(x-100);
-*/
+
+            Ai();
+
+
             System.out.println(destination);
 
             SinglePlayeranimation.play();
@@ -152,6 +163,8 @@ class circle  {
             note.setCycleCount(1);
 
             note.play();
+            SinglePlayeranimation.play();
+
 
         }
         x += dx;
