@@ -17,19 +17,14 @@ import javafx.util.Duration;
 
 
 import java.net.URL;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
 import javafx.scene.control.ComboBox;
 
 class circle  {
-    int dx=1,dy=1;
+    double dx=1,dy=1;
     double x,y,radius,width,Height;
-    double destination=0;
    static Timeline animation;
     static Integer score1=0,score2=0;
-    Timeline SinglePlayeranimation;
 
 
 
@@ -47,44 +42,18 @@ class circle  {
         }));
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
-        SinglePlayeranimation=new Timeline(new KeyFrame(Duration.millis(4),e->
-        {
-            if(destination!=0)
-            {
-
-                if(r2.getY()!=destination)
-                r2.setY(r2.getY()>destination? r2.getY()-1:r2.getY()<destination? r2.getY()+1:r2.getY());
-            else {
-                    System.out.println("pause");
-                    SinglePlayeranimation.pause();
-                    destination = 0;
-                }
-
-            }
-            else
-            {
-                if(dy==1)
-                    r2.setY(r2.getY()>500-40?r2.getY():r2.getY()+1);
-                else
-                    r2.setY(r2.getY()<0?r2.getY():r2.getY()-1);
-
-
-
-
-            }
-        }));
-        SinglePlayeranimation.setCycleCount(-1);
-
-
 
 
     }
-    private void Ai( )
+    private void random()
     {
-        destination= (dy==1)?x-100+y:-1*(x-100)+y;
-        destination=destination>500-40?500-40:destination;
-        destination=destination<0?0:destination;
+        double xrandom=Math.random()*6-3;
+        double yrandom=Math.random()*6-3;
+
+        dx=Math.abs(xrandom)>=1?xrandom:1;
+        dy=Math.abs(yrandom)>=1?yrandom:1;
     }
+
 
 
     public void moveball (Rectangle r1, Rectangle r2,Circle c1){
@@ -93,10 +62,13 @@ class circle  {
             score2++;
             x=250;
             y=250;
-           Ai();
+            random();
 
 
-            SinglePlayeranimation.play();
+            System.out.println(dx);
+            System.out.println(dy);
+
+
 
 
         }
@@ -104,25 +76,15 @@ class circle  {
             score1++;
             x=250;
             y=250;
-            Ai();
+            random();
 
 
-            SinglePlayeranimation.play();
 
 
         }
 
         if (y < radius || y > Height - radius) {
             dy *= -1;
-//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
-//           destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
-
-            Ai();
-
-
-
-            SinglePlayeranimation.play();
-            System.out.println(destination);
 
         }
 
@@ -131,16 +93,6 @@ class circle  {
         if(c1.intersects(r1.getBoundsInParent()))
         {
             dx *= -1;
-//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
-//            destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
-
-
-            Ai();
-
-
-            System.out.println(destination);
-
-            SinglePlayeranimation.play();
 
 
             URL url = getClass().getResource("audio/POOL-Pool_Shot-709343898.mp3");
@@ -164,7 +116,6 @@ class circle  {
             note.setCycleCount(1);
 
             note.play();
-            SinglePlayeranimation.play();
 
 
         }
@@ -269,7 +220,7 @@ class Tabs extends Pane {
     }
     public  void increaseSpeed()
     {
-        circle.animation.setRate(circle.animation.getRate()>5?circle.animation.getRate():circle.animation.getRate()+0.05);
+        circle.animation.setRate(circle.animation.getRate()>7?circle.animation.getRate():circle.animation.getRate()+0.05);
 
 
     };
