@@ -14,10 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
 import javafx.scene.control.ComboBox;
 
 class circle  {
@@ -91,7 +88,7 @@ class circle  {
 
 class Tabs extends Pane {
 
-
+    KeyManager key=new KeyManager();
     Rectangle r1 = new Rectangle(400,230,10,40);
     Rectangle r2 = new Rectangle(90, 230, 10, 40);
     Circle c1 = new Circle(250, 250, 7);
@@ -101,8 +98,7 @@ class Tabs extends Pane {
 
 
     public Tabs(){
-        setWidth(200);
-        setHeight(200);
+
 
 
 
@@ -111,45 +107,56 @@ class Tabs extends Pane {
         r2.setFill(Color.RED);
 
         this.getChildren().addAll(r1,r2,c1,txt1,txt2);
+
         this.setOnKeyPressed(
                 (KeyEvent event) -> {
                     if (event.getCode() == KeyCode.UP)
-                        r1.setY(r1.getY() <= 0 ? r1.getY() : r1.getY() - 5);
-
+                        key.setkeystate(KeyCode.UP,true);
                     else if (event.getCode() == KeyCode.DOWN)
-                        r1.setY(r1.getY() >= 500 - 40 ? r1.getY() : r1.getY() + 5);
+                        key.setkeystate(KeyCode.DOWN,true);
+
+
                     if (event.getCode() == KeyCode.W)
-                        r2.setY(r2.getY() <= 0 ? r2.getY() : r2.getY() - 5);
+                        key.setkeystate(KeyCode.W,true);
+
+
                     else if (event.getCode() == KeyCode.S)
-                        r2.setY(r2.getY() >= 500 - 40 ? r2.getY() : r2.getY() + 5);
+                        key.setkeystate(KeyCode.S,true);
+
+
+                });
+        this.setOnKeyReleased(
+                (KeyEvent event) -> {
+                    if (event.getCode() == KeyCode.UP)
+                        key.setkeystate(KeyCode.UP,false);
+                    else if (event.getCode() == KeyCode.DOWN)
+                        key.setkeystate(KeyCode.DOWN,false);
+
+
+                    if (event.getCode() == KeyCode.W)
+                        key.setkeystate(KeyCode.W,false);
+
+
+                    else if (event.getCode() == KeyCode.S)
+                        key.setkeystate(KeyCode.S,false);
+
+
                 });
 
 
-     /*   final List<KeyCode> acceptedCodes = Arrays.asList(KeyCode.S, KeyCode.W, KeyCode.UP, KeyCode.DOWN);
-        final Set<KeyCode> codes = new HashSet<>();
-        setOnKeyReleased(e -> codes.clear());
-        setOnKeyPressed(e -> {
-            if (acceptedCodes.contains(e.getCode())) {
-                codes.add(e.getCode());
-                if (codes.contains(KeyCode.W)) {
-                    r2.setY(r1.getY()<0 ?   r2.getY(): r2.getY()-5);
 
-                } else if (codes.contains(KeyCode.S)) {
-                    r2.setY(r1.getY()> 500-40 ?   r2.getY(): r2.getY()+5);
-
-                }
-
-                if (codes.contains(KeyCode.UP)) {
-                    r1.setY(r2.getY()<0 ?   r1.getY(): r1.getY()-5);
-
-                } else if (codes.contains(KeyCode.DOWN)) {
-                    r1.setY(r2.getY()> 500-40 ?   r1.getY(): r1.getY()+5);
-                }
-            }
-        });*/
-        animation=new Timeline(new KeyFrame( Duration.millis(50),e->
+        animation=new Timeline(new KeyFrame( Duration.millis(35),e->
 
         {
+            if (key.getkeystate(KeyCode.UP))
+                r1.setY(r1.getY() <= 0 ? r1.getY() : r1.getY() - 5);
+
+            else if (key.getkeystate(KeyCode.DOWN))
+                r1.setY(r1.getY() >= 500 - 40 ? r1.getY() : r1.getY() + 5);
+            if (key.getkeystate(KeyCode.W))
+                r2.setY(r2.getY() <= 0 ? r2.getY() : r2.getY() - 5);
+            else if (key.getkeystate(KeyCode.S))
+                r2.setY(r2.getY() >= 500 - 40 ? r2.getY() : r2.getY() + 5);
             txt1.setText(circle.score1.toString());
             txt2.setText(circle.score2.toString());
         }));
