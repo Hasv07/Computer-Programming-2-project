@@ -25,6 +25,10 @@ class circle  {
     double x,y,radius,width,Height;
    static Timeline animation;
     static Integer score1=0,score2=0;
+    double destination=400,destination2=400;
+   static Timeline animation;
+    static Integer score1=0,score2=0;
+    Timeline SinglePlayeranimation,SinglePlayeranimation2;
 
 
 
@@ -42,6 +46,66 @@ class circle  {
         }));
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
+        SinglePlayeranimation2=new Timeline(new KeyFrame(Duration.millis(4),e->
+        {
+            if(destination2!=0)
+            {
+
+                if(r1.getY()!=destination2)
+                r1.setY(r1.getY()>destination2? r1.getY()-1:r1.getY()<destination2? r1.getY()+1:r1.getY());
+            else {
+                    System.out.println("pause");
+                    SinglePlayeranimation2.pause();
+                    destination2 = 0;
+
+                }
+
+            }
+            else
+            {
+                if(dy==1)
+                    r1.setY(r1.getY()>=500-40?r1.getY():r1.getY()+1);
+                else
+                    r1.setY(r1.getY()<=0?r1.getY():r1.getY()-1);
+
+
+
+
+            }
+        }));
+        SinglePlayeranimation=new Timeline(new KeyFrame(Duration.millis(4),e->
+        {
+            if(destination!=0) {
+
+                if (r2.getY() != destination)
+                    r2.setY(r2.getY() > destination ? r2.getY() - 1 : r2.getY() < destination ? r2.getY() + 1 : r2.getY());
+                else {
+                    System.out.println("pause");
+                    SinglePlayeranimation.pause();
+                    destination = 0;
+
+
+
+                }
+            }
+            else
+            {
+                if(dy==1)
+                    r2.setY(r2.getY()>=500-40?r2.getY():r2.getY()+1);
+                else
+                    r2.setY(r2.getY()<=0?r2.getY():r2.getY()-1);
+
+
+
+
+            }
+        }));
+        SinglePlayeranimation.setCycleCount(-1);
+        SinglePlayeranimation2.setCycleCount(-1);
+
+
+        SinglePlayeranimation2.play();
+
 
 
     }
@@ -52,11 +116,21 @@ class circle  {
 
         dx=Math.abs(xrandom)>=1?xrandom:1;
         dy=Math.abs(yrandom)>=1?yrandom:1;
+        destination= (dy==1)?x-100+y:-1*(x-100)+y;
+        destination=destination>=500-40?500-40:destination;
+        destination=destination<=0?0:destination;
+    }
+    private void Ai2( )
+    {
+        destination2= (dy==1)?400-x+y:-1*(400-x)+y;
+        destination2=destination2>=500-40?500-40:destination2;
+        destination2=destination2<=0?0:destination2;
     }
 
 
 
     public void moveball (Rectangle r1, Rectangle r2,Circle c1){
+
         if (x < radius )
         {
             score2++;
@@ -70,6 +144,23 @@ class circle  {
 
 
 
+            Ai2();
+
+            Ai();
+
+
+
+
+
+
+
+            SinglePlayeranimation.play();
+            SinglePlayeranimation2.play();
+
+
+
+
+
 
         }
         if(x > width - radius) {
@@ -80,11 +171,40 @@ class circle  {
 
 
 
+            Ai2();
+
+            Ai();
+
+
+
+
+            SinglePlayeranimation.play();
+            SinglePlayeranimation2.play();
+
+
+
+
 
         }
 
         if (y < radius || y > Height - radius) {
             dy *= -1;
+//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
+//           destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
+
+
+            Ai2();
+
+            Ai();
+
+
+
+
+            SinglePlayeranimation.play();
+            SinglePlayeranimation2.play();
+
+
+            System.out.println(destination2);
 
         }
 
@@ -93,6 +213,22 @@ class circle  {
         if(c1.intersects(r1.getBoundsInParent()))
         {
             dx *= -1;
+//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
+//            destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
+
+
+            Ai2();
+
+            Ai();
+
+
+
+
+            System.out.println(destination2);
+
+            SinglePlayeranimation.play();
+            SinglePlayeranimation2.play();
+
 
 
             URL url = getClass().getResource("audio/POOL-Pool_Shot-709343898.mp3");
@@ -109,6 +245,11 @@ class circle  {
 
             dx *= -1;
 
+            Ai2();
+
+            Ai();
+
+
             URL url = this.getClass().getResource("audio/POOL-Pool_Shot-709343898.mp3");
 
             AudioClip note=new AudioClip(url.toString());
@@ -116,6 +257,9 @@ class circle  {
             note.setCycleCount(1);
 
             note.play();
+            SinglePlayeranimation.play();
+            SinglePlayeranimation2.play();
+
 
 
         }
