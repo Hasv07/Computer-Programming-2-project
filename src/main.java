@@ -11,6 +11,7 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -25,10 +26,11 @@ class circle  {
     double x,y,radius,width,Height;
    static Timeline animation;
     static Integer score1=0,score2=0;
-    double destination=400,destination2=400;
-   static Timeline animation;
-    static Integer score1=0,score2=0;
-    Timeline SinglePlayeranimation,SinglePlayeranimation2;
+    double destination=400;
+    int dificuilityTime=8;
+    GameMode mode;
+
+    Timeline SinglePlayeranimation;
 
 
 
@@ -41,44 +43,26 @@ class circle  {
         animation=new Timeline(new KeyFrame( Duration.millis(50),e->
 
         {
+            if(MainPane.flag) {
+                mode = new GameMode(MainPane.index);
 
-            moveball(r1,r2,c1);
+                moveball(r1, r2, c1);
+            }
+            if(main.flag)
+            {
+               animation.stop();
+               SinglePlayeranimation.stop();
+            }
         }));
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
-        SinglePlayeranimation2=new Timeline(new KeyFrame(Duration.millis(4),e->
-        {
-            if(destination2!=0)
-            {
 
-                if(r1.getY()!=destination2)
-                r1.setY(r1.getY()>destination2? r1.getY()-1:r1.getY()<destination2? r1.getY()+1:r1.getY());
-            else {
-                    System.out.println("pause");
-                    SinglePlayeranimation2.pause();
-                    destination2 = 0;
-
-                }
-
-            }
-            else
-            {
-                if(dy==1)
-                    r1.setY(r1.getY()>=500-40?r1.getY():r1.getY()+1);
-                else
-                    r1.setY(r1.getY()<=0?r1.getY():r1.getY()-1);
-
-
-
-
-            }
-        }));
-        SinglePlayeranimation=new Timeline(new KeyFrame(Duration.millis(4),e->
+        SinglePlayeranimation=new Timeline(new KeyFrame(Duration.millis(dificuilityTime),e->
         {
             if(destination!=0) {
 
                 if (r2.getY() != destination)
-                    r2.setY(r2.getY() > destination ? r2.getY() - 1 : r2.getY() < destination ? r2.getY() + 1 : r2.getY());
+                    r2.setY(r2.getY() > destination ? r2.getY() - 2 : r2.getY() < destination ? r2.getY() + 2 : r2.getY());
                 else {
                     System.out.println("pause");
                     SinglePlayeranimation.pause();
@@ -91,9 +75,9 @@ class circle  {
             else
             {
                 if(dy==1)
-                    r2.setY(r2.getY()>=500-40?r2.getY():r2.getY()+1);
+                    r2.setY(r2.getY()>=500-40?r2.getY():r2.getY()+2);
                 else
-                    r2.setY(r2.getY()<=0?r2.getY():r2.getY()-1);
+                    r2.setY(r2.getY()<=0?r2.getY():r2.getY()-2);
 
 
 
@@ -101,31 +85,30 @@ class circle  {
             }
         }));
         SinglePlayeranimation.setCycleCount(-1);
-        SinglePlayeranimation2.setCycleCount(-1);
 
 
-        SinglePlayeranimation2.play();
+
 
 
 
     }
-    private void random()
-    {
-        double xrandom=Math.random()*6-3;
-        double yrandom=Math.random()*6-3;
+    private void random() {
+        double xrandom = Math.random() * 6 - 3;
+        double yrandom = Math.random() * 6 - 3;
 
-        dx=Math.abs(xrandom)>=1?xrandom:1;
-        dy=Math.abs(yrandom)>=1?yrandom:1;
-        destination= (dy==1)?x-100+y:-1*(x-100)+y;
+        dx = Math.abs(xrandom) >= 1 ? xrandom : 1;
+        dy = Math.abs(yrandom) >= 1 ? yrandom : 1;
+    }
+        private void Ai()
+        {
+            double n=dx/dy;
+            System.out.println(n);
+
+            destination= (dx>=0)?((x-100)/n)+y:-1*((x-100)/n)+y;
         destination=destination>=500-40?500-40:destination;
         destination=destination<=0?0:destination;
     }
-    private void Ai2( )
-    {
-        destination2= (dy==1)?400-x+y:-1*(400-x)+y;
-        destination2=destination2>=500-40?500-40:destination2;
-        destination2=destination2<=0?0:destination2;
-    }
+
 
 
 
@@ -136,33 +119,13 @@ class circle  {
             score2++;
             x=250;
             y=250;
-            random();
+        random();
+        if(mode.gameMode[0]) {
+    Ai();
 
-
-            System.out.println(dx);
-            System.out.println(dy);
-
-
-
-            Ai2();
-
-            Ai();
-
-
-
-
-
-
-
-            SinglePlayeranimation.play();
-            SinglePlayeranimation2.play();
-
-
-
-
-
-
-        }
+    SinglePlayeranimation.play();
+}
+ }
         if(x > width - radius) {
             score1++;
             x=250;
@@ -171,15 +134,12 @@ class circle  {
 
 
 
-            Ai2();
 
-            Ai();
+            if(mode.gameMode[0]) {
+                Ai();
 
-
-
-
-            SinglePlayeranimation.play();
-            SinglePlayeranimation2.play();
+                SinglePlayeranimation.play();
+            }
 
 
 
@@ -189,22 +149,14 @@ class circle  {
 
         if (y < radius || y > Height - radius) {
             dy *= -1;
-//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
-//           destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
-
-
-            Ai2();
-
-            Ai();
 
 
 
+            if(mode.gameMode[0]) {
+                Ai();
 
-            SinglePlayeranimation.play();
-            SinglePlayeranimation2.play();
-
-
-            System.out.println(destination2);
+                SinglePlayeranimation.play();
+            }
 
         }
 
@@ -213,21 +165,15 @@ class circle  {
         if(c1.intersects(r1.getBoundsInParent()))
         {
             dx *= -1;
-//            destination= !((x-100+y)>(500-40))&&(dy==1)?x-100+y:0;
-//            destination= !((-1*(x-100)+y)<0)&&(dy==-1)?-1*(x-100)+y:0;
-
-
-            Ai2();
-
-            Ai();
 
 
 
 
-            System.out.println(destination2);
+            if(mode.gameMode[0]) {
+                Ai();
 
-            SinglePlayeranimation.play();
-            SinglePlayeranimation2.play();
+                SinglePlayeranimation.play();
+            }
 
 
 
@@ -245,10 +191,12 @@ class circle  {
 
             dx *= -1;
 
-            Ai2();
 
-            Ai();
+            if(mode.gameMode[0]) {
+                Ai();
 
+                SinglePlayeranimation.play();
+            }
 
             URL url = this.getClass().getResource("audio/POOL-Pool_Shot-709343898.mp3");
 
@@ -257,8 +205,6 @@ class circle  {
             note.setCycleCount(1);
 
             note.play();
-            SinglePlayeranimation.play();
-            SinglePlayeranimation2.play();
 
 
 
@@ -276,6 +222,9 @@ class Tabs extends Pane {
     KeyManager key=new KeyManager();
 
     Timeline anim;
+    GameMode mode;
+
+
 
     Rectangle r1 = new Rectangle(400,230,10,40);
     Rectangle r2 = new Rectangle(90, 230, 10, 40);
@@ -285,78 +234,102 @@ class Tabs extends Pane {
     Timeline animation;
 
 
-    public Tabs(){
+    public Tabs() {
+
+
+        mode=new GameMode(MainPane.index);
+
+        System.out.println(MainPane.index);
 
 
 
 
-
-        r1.setFill(Color.BLUE);
+        r1.setFill(Color.BROWN);
         r2.setFill(Color.RED);
 
         this.getChildren().addAll(r1,r2,c1,txt1,txt2);
 
-        this.setOnKeyPressed(
-                (KeyEvent event) -> {
-                    if (event.getCode() == KeyCode.UP)
-                        key.setkeystate(KeyCode.UP,true);
-                    else if (event.getCode() == KeyCode.DOWN)
-                        key.setkeystate(KeyCode.DOWN,true);
-
-
-                    if (event.getCode() == KeyCode.W)
-                        key.setkeystate(KeyCode.W,true);
-
-
-                    else if (event.getCode() == KeyCode.S)
-                        key.setkeystate(KeyCode.S,true);
-
-
-                });
-        this.setOnKeyReleased(
-                (KeyEvent event) -> {
-                    if (event.getCode() == KeyCode.UP)
-                        key.setkeystate(KeyCode.UP,false);
-                    else if (event.getCode() == KeyCode.DOWN)
-                        key.setkeystate(KeyCode.DOWN,false);
-
-
-                    if (event.getCode() == KeyCode.W)
-                        key.setkeystate(KeyCode.W,false);
-
-
-                    else if (event.getCode() == KeyCode.S)
-                        key.setkeystate(KeyCode.S,false);
-
-
-                });
 
 
 
-        animation=new Timeline(new KeyFrame( Duration.millis(35),e->
 
-        {
-            if (key.getkeystate(KeyCode.UP))
-                r1.setY(r1.getY() <= 0 ? r1.getY() : r1.getY() - 5);
+                this.setOnKeyPressed(
+                        (KeyEvent event) -> {
+                            if (event.getCode() == KeyCode.UP)
+                                key.setkeystate(KeyCode.UP, true);
+                            else if (event.getCode() == KeyCode.DOWN)
+                                key.setkeystate(KeyCode.DOWN, true);
 
-            else if (key.getkeystate(KeyCode.DOWN))
-                r1.setY(r1.getY() >= 500 - 40 ? r1.getY() : r1.getY() + 5);
-            if (key.getkeystate(KeyCode.W))
-                r2.setY(r2.getY() <= 0 ? r2.getY() : r2.getY() - 5);
-            else if (key.getkeystate(KeyCode.S))
-                r2.setY(r2.getY() >= 500 - 40 ? r2.getY() : r2.getY() + 5);
-            txt1.setText(circle.score1.toString());
-            txt2.setText(circle.score2.toString());
-        }));
-        animation.setCycleCount(-1);
-        animation.play();
+
+                            if (event.getCode() == KeyCode.W)
+                                key.setkeystate(KeyCode.W, true);
+
+
+                            else if (event.getCode() == KeyCode.S)
+                                key.setkeystate(KeyCode.S, true);
+
+
+                        });
+                this.setOnKeyReleased(
+                        (KeyEvent event) -> {
+                            if (event.getCode() == KeyCode.UP)
+                                key.setkeystate(KeyCode.UP, false);
+                            else if (event.getCode() == KeyCode.DOWN)
+                                key.setkeystate(KeyCode.DOWN, false);
+
+
+                            if (event.getCode() == KeyCode.W)
+                                key.setkeystate(KeyCode.W, false);
+
+
+                            else if (event.getCode() == KeyCode.S)
+                                key.setkeystate(KeyCode.S, false);
+
+
+                        });
+
+
+                animation = new Timeline(new KeyFrame(Duration.millis(35), e ->
+
+                {
+                    if (mode.gameMode[1]) {
+
+                        if (key.getkeystate(KeyCode.UP))
+                            r1.setY(r1.getY() <= 0 ? r1.getY() : r1.getY() - 10);
+
+                        else if (key.getkeystate(KeyCode.DOWN))
+                            r1.setY(r1.getY() >= 500 - 40 ? r1.getY() : r1.getY() +10);
+                        if (key.getkeystate(KeyCode.W))
+                            r2.setY(r2.getY() <= 0 ? r2.getY() : r2.getY() - 10);
+                        else if (key.getkeystate(KeyCode.S))
+                            r2.setY(r2.getY() >= 500 - 40 ? r2.getY() : r2.getY() + 10);
+                        txt1.setText(circle.score1.toString());
+                        txt2.setText(circle.score2.toString());
+                    }
+                    else if(mode.gameMode[0]) {
+
+                        if (key.getkeystate(KeyCode.UP))
+                            r1.setY(r1.getY() <= 0 ? r1.getY() : r1.getY() - 10);
+
+                        else if (key.getkeystate(KeyCode.DOWN))
+                            r1.setY(r1.getY() >= 500 - 40 ? r1.getY() : r1.getY() + 10);
+
+                        txt1.setText(circle.score1.toString());
+                        txt2.setText(circle.score2.toString());
+                    }
+                }));
+                animation.setCycleCount(-1);
+                animation.play();
+
 
         circle s1 = new circle(r1, r2, c1,500,500);
 
         anim=new Timeline(new KeyFrame(Duration.millis(50),e->{
+            mode=new GameMode(MainPane.index);
 
             increaseSpeed();
         }));
+
         anim.setCycleCount(Timeline.INDEFINITE);
         anim.play();
 
@@ -364,12 +337,15 @@ class Tabs extends Pane {
     }
     public  void increaseSpeed()
     {
-        circle.animation.setRate(circle.animation.getRate()>7?circle.animation.getRate():circle.animation.getRate()+0.05);
+        circle.animation.setRate(circle.animation.getRate()>8?circle.animation.getRate():circle.animation.getRate()+0.05);
 
 
-    };
+    }
+
 }
 public class main extends Application {
+    Timeline Start;
+    static boolean flag;
     @Override
     public void start(Stage primaryStage)  {
 
@@ -378,12 +354,69 @@ public class main extends Application {
         Rectangle r= new Rectangle(800,800,Color.WHITE);
         b cb=new b();
 
-
         Pane p=new Pane(r,tab,cb);
-        Scene scene=new Scene(p,500,500);
+        Scene scene2=new Scene(p,500,500);
+        r.setFill(Color.BLACK);
+        tab.c1.setFill(Color.WHITE);
+        tab.txt1.setFill(Color.WHITE);
+        tab.txt2.setFill(Color.WHITE);
+        MainPane menu=new MainPane();
+        Scene scene=new Scene(menu,900,700);
+
+        URL url = getClass().getResource("audio/y2mate.com - bring_home_the_glory_ft_sara_skinner_official_audio_msi_2019_league_of_legends_TG-RGt7Q1oI.mp3");
+
+        AudioClip note=new AudioClip(url.toString());
+        note.setVolume(100);
+        note.setCycleCount(-1);
+        note.play();
+        Start=new Timeline(new KeyFrame( Duration.millis(1),e->
+        {
+           if(MainPane.flag)
+           {
+
+
+               note.stop();
+
+               primaryStage.setScene(scene2);
+               if(tab.txt1.getText().equals("10"))
+               {
+                   p.getChildren().clear();
+
+                   Text txt=new Text (190,245,"Red wins");
+                   txt.setFill(Color.RED);
+                   txt.setFont(Font.font(30));
+                   p.getChildren().add(txt);
+
+
+                   flag=true;
+                   tab.animation.stop();
+                   tab.anim.stop();
+                   Start.stop();
+           }
+               if(tab.txt2.getText().equals("10")) {
+                   p.getChildren().clear();
+                   Text txt=new Text (190,245,"Brown wins");
+                   txt.setFill(Color.BROWN);
+                   txt.setFont(Font.font(30));
+
+
+
+                   p.getChildren().add(txt);
+                   flag=true;
+
+                   tab.animation.stop();
+                   tab.anim.stop();
+                   Start.stop();
+               }
+           }
+
+        }));
+        Start.setCycleCount(-1);
+        Start.play();
+
         tab.requestFocus();
 
-        cb.setOnAction(e->{
+        cb.setOnAction(e1->{
             tab.requestFocus();
 
             if(cb.getValue()=="white")
@@ -407,7 +440,7 @@ public class main extends Application {
                 tab.c1.setFill(Color.WHITE);
 
                 r.setFill(Color.BLUE);
-                tab.r1.setFill(Color.YELLOW);}
+                tab.r1.setFill(Color.BROWN);}
         });
 
         primaryStage.setScene(scene);
@@ -423,7 +456,7 @@ public class main extends Application {
 class b extends ComboBox{
 
     b(){
-        setValue("white");
+        setValue("black");
 
         setLayoutX(15);
         setLayoutY(10);
