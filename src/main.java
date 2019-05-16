@@ -64,7 +64,7 @@ class circle  {
                 if (r2.getY() != destination)
                     r2.setY(r2.getY() > destination ? r2.getY() - 2 : r2.getY() < destination ? r2.getY() + 2 : r2.getY());
                 else {
-                    System.out.println("pause");
+//                    System.out.println("pause");
                     SinglePlayeranimation.pause();
                     destination = 0;
 
@@ -102,7 +102,7 @@ class circle  {
         private void Ai()
         {
             double n=dx/dy;
-            System.out.println(n);
+//            System.out.println(n);
 
             destination= (dx>=0)?((x-100)/n)+y:-1*((x-100)/n)+y;
         destination=destination>=500-40?500-40:destination;
