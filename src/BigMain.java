@@ -55,6 +55,11 @@ public class BigMain extends Application {
    testmain2 ZombieAttack=new testmain2();
    ZombieAttack.start(primaryStage);
        });
+       img3.setOnMousePressed(e->{
+           ProfessorBall prof=new ProfessorBall();
+           prof.start(primaryStage);
+               }
+               );
         Pane p=new Pane();
         p.getChildren().addAll(img,img1,img2,img3);
         Scene scene=new Scene(p);
