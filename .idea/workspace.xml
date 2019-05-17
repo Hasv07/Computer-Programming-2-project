@@ -10,22 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb848a14-4b80-453d-a917-3d3568f48c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Computer_Programming_2_project_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Font/Horror.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EndGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Fire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GamePane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Updatable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio/Zombie-Game.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Game2/8fb66d1a7f7cc3b99ad89da3940fd2bb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Game2/canon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Game2/zy6lng2invu01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testmain2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BigMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cursor/wind-rose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gif/cooltext324580070154732.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/62999356-seamless-game-background-flat-style-2d-game-application.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/6d5201130c4a347f6e12a4ebbe812671f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/6d5201130c4a347f6e12a4ebbe81267f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/6d5201130c4a347f6e12a4ebbe81267f2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/ball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/giphy[2].gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/giphy[3].gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="/test/Computer-Programming-2-project/" />
@@ -43,20 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="366" selection-start-line="365" selection-start-column="7" selection-end-line="370" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GamePane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="102" column="45" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
+            <state relative-caret-position="153">
+              <caret line="347" column="11" selection-start-line="346" selection-start-column="2" selection-end-line="347" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,24 +50,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EndGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-96">
-              <caret line="50" column="22" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="22" />
+            <state relative-caret-position="175">
+              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1675#1676#0" expanded="true" />
-                <element signature="e#1746#1747#0" expanded="true" />
-                <element signature="e#1790#1791#0" expanded="true" />
-                <element signature="e#1827#1828#0" expanded="true" />
+                <element signature="e#1673#1674#0" expanded="true" />
+                <element signature="e#1745#1746#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Updatable.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BigMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="270">
+              <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Testmain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="802">
+            <state relative-caret-position="969">
               <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -104,12 +88,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/testmain2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="38" column="35" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="35" />
+            <state relative-caret-position="661">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
+                <element signature="e#1378#1379#0" expanded="true" />
                 <marker date="1558017344206" expanded="true" signature="570:574" ph="..." />
               </folding>
             </state>
@@ -128,24 +111,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="595">
               <caret line="45" column="9" selection-start-line="45" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#822#823#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
-                <element signature="e#890#891#0" expanded="true" />
-                <element signature="e#922#923#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Fire.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            <state relative-caret-position="408">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,8 +147,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -195,12 +174,13 @@
         <option value="$PROJECT_DIR$/src/GamePane.java" />
         <option value="$PROJECT_DIR$/src/Ball.java" />
         <option value="$PROJECT_DIR$/src/Fire.java" />
+        <option value="$PROJECT_DIR$/src/BigMain.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="51" />
+    <option name="x" value="-3" />
+    <option name="y" value="317" />
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
@@ -209,7 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -221,60 +200,59 @@
             <path>
               <item name="Computer-Programming-2-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Computer-Programming-2-project" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Computer-Programming-2-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Computer-Programming-2-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Computer-Programming-2-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Computer-Programming-2-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="audio" type="462c0819:PsiDirectoryNode" />
+              <item name="cursor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Computer-Programming-2-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Computer-Programming-2-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="EndGame.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="gif" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Computer-Programming-2-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Computer-Programming-2-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Computer-Programming-2-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Computer-Programming-2-project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Testmain.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="Arrow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/cursor" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\Font" />
-      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\images\Game2" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\audio" />
-      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\Resources" />
-      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\Font" />
       <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\images" />
+      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\cursor" />
+      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\gif" />
+      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src" />
+      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\audio" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\cursor" />
+      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\images" />
+      <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\Font" />
       <recent name="C:\Users\owner\Documents\GitHub\Computer-Programming-2-project\src\images\Game2" />
     </key>
   </component>
@@ -290,7 +268,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.testmain2">
+  <component name="RunManager" selected="Application.BigMain">
+    <configuration name="BigMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BigMain" />
+      <module name="Computer-Programming-2-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EndGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EndGame" />
       <module name="Computer-Programming-2-project" />
@@ -312,13 +297,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main1" />
-      <module name="Computer-Programming-2-project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="testmain2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="testmain2" />
       <module name="Computer-Programming-2-project" />
@@ -328,11 +306,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.testmain2" />
-        <item itemvalue="Application.EndGame" />
-        <item itemvalue="Application.main1" />
+        <item itemvalue="Application.BigMain" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.testmain2" />
         <item itemvalue="Application.Testmain" />
+        <item itemvalue="Application.EndGame" />
       </list>
     </recent_temporary>
   </component>
@@ -350,10 +328,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="260" y="394" width="1400" height="784" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.40335572" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4619403" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -362,15 +339,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.47248322" visible="true" weight="0.20538244" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.39943343" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46492538" visible="true" weight="0.20398773" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5275168" side_tool="true" visible="true" weight="0.20538244" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.53507465" side_tool="true" visible="true" weight="0.20398773" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4818792" weight="0.32577905" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4805369" weight="0.32577905" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -428,11 +405,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Font/youmurdererbb_reg.otf">
-      <provider selected="true" editor-type-id="fontseditor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Font/youmurdererbb_reg.otf" />
     <entry file="file://$PROJECT_DIR$/Resources/Font/Horror.otf">
       <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GamePane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Updatable.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -441,56 +426,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/KeyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Testmain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="802">
+        <state relative-caret-position="969">
           <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EndGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="50" column="22" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1675#1676#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1790#1791#0" expanded="true" />
-            <element signature="e#1827#1828#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="366" selection-start-line="365" selection-start-column="7" selection-end-line="370" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testmain2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="38" column="35" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <marker date="1558017344206" expanded="true" signature="570:574" ph="..." />
           </folding>
         </state>
       </provider>
@@ -502,34 +443,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GamePane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="102" column="45" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="595">
           <caret line="45" column="9" selection-start-line="45" selection-end-line="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#822#823#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Fire.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state relative-caret-position="408">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KeyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EndGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1673#1674#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testmain2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1378#1379#0" expanded="true" />
+            <marker date="1558017344206" expanded="true" signature="570:574" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="347" column="11" selection-start-line="346" selection-start-column="2" selection-end-line="347" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gif/cooltext324580070154732.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BigMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
