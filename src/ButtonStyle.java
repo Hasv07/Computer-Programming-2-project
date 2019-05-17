@@ -2,7 +2,6 @@
 
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -12,7 +11,7 @@ public class ButtonStyle extends Button {
 
     public ButtonStyle(String text)
     {
-        getStylesheets().add("sample/Style.css");
+        getStylesheets().add("Style.css");
         setText(text);
         setButtonFont();
         setPrefWidth(150);

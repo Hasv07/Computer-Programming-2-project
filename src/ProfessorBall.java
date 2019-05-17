@@ -3,6 +3,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
@@ -59,6 +60,9 @@ public class ProfessorBall extends Application {
             txt2.setStrokeWidth(2);
             txt2.setStroke(Color.BISQUE);
 
+//            ImageView img2 =new ImageView(new Image("images/icons8-undo-filled-100.png"));
+
+
 
 
             ImageView img1 =new ImageView(new Image("gif/cooltext324580070154732.gif"));
@@ -87,7 +91,6 @@ public class ProfessorBall extends Application {
 
             Timeline animation = new Timeline(new KeyFrame(Duration.millis(50), e1 -> {
 
-//                clock.setcurrenttime();
                 ball.increaseSpeed();
                 txt2.setText(Ballpane.counter.toString());
 
